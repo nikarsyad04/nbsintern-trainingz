@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Student;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+use Stringable;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,5 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Student::factory(10)->create();
+
+        $this->call([
+            StaffSeeder::class,
+        ]);
     }
 }
