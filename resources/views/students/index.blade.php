@@ -29,8 +29,8 @@
                     <td>{{$student -> address}}</td>
                     <td>{{$student -> is_final_year}}</td>
                     <td>
-                        {{-- <a href="{{route('students.show', $student -> id)}}">Show</a>
-                        <a href="{{route('students.edit', $student -> id)}}">Edit</a> --}}
+                        {{-- <a href="{{route('students.show', $student -> id)}}">Show</a> --}}
+                        <a href="{{route('students.edit', $student -> id)}}">Edit</a>
 
                         <form action="{{route('students.destroy', $student -> id)}}" method="POST">
                             @csrf

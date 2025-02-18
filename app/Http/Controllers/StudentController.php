@@ -46,7 +46,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', [
+            'student' => $student
+        ]);
     }
 
     /**
@@ -54,7 +56,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        // $student->update($request->all());
+        $student->name = $request->name;
+        $student->age = $request->age;
+        $student->dob = $request->dob;
+        $student->address = $request->address;
+        $student->is_final_year = $request->is_final_year;
+        $student->save();
+
+        return redirect('/students');
     }
 
     /**
@@ -62,6 +72,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return back();
     }
 }

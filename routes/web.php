@@ -24,3 +24,5 @@ Use App\Http\Controllers\StudentController;
 Route::get('/students',[StudentController::class,'index']);
 
 Route::delete('/students/{student}',[StudentController::class,'destroy'])->name('students.destroy');
+Route::get('/students/{student}',[StudentController::class,'edit'])->name('students.edit');
+Route::put('/students/{student}',[StudentController::class,'update'])->name('students.update');
