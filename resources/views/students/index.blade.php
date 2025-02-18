@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Students of SMK KING GEORGE V</h1>
+    <a href="{{route('students.create')}}">Add Student</a>
 
     <table border="1">
         <thead>
@@ -23,7 +24,7 @@
         <tbody>
             @forelse ($students as $student)
                 <tr>
-                    <td>{{$student -> name}}</td>
+                    <td><a href="{{route('students.show', $student->id)}}" -> {{$student->name}}</a></td>
                     <td>{{$student -> age}}</td>
                     <td>{{$student -> dob}}</td>
                     <td>{{$student -> address}}</td>

@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -30,7 +30,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student();
+        $student->name = $request->name;
+        $student->age = $request->age;
+        $student->dob = $request->dob;
+        $student->address = $request->address;
+        $student->is_final_year = $request->is_final_year;
+        $student->save();
+
+        return redirect('/students');
     }
 
     /**
@@ -38,7 +46,9 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('students.show', [
+            'student' => $student
+        ]);
     }
 
     /**
