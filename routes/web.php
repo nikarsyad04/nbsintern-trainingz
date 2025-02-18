@@ -18,3 +18,9 @@ Route::get('trying', [TryingController::class, 'index'] );
 Use App\Http\Controllers\TestingController;
 
 Route::resource('testing',TestingController::class);
+
+Use App\Http\Controllers\StudentController;
+
+Route::get('/students',[StudentController::class,'index']);
+
+Route::delete('/students/{student}',[StudentController::class,'destroy'])->name('students.destroy');
